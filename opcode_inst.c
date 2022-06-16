@@ -33,13 +33,13 @@ void push(stack_t **head, unsigned int nline)
 	n = atoi(glob_v.arg);
 
 	if (glob_v.lifo == 1)
-		add_dnodeint(doubly, n);
+		add_dnodeint(head, n);
 	else
-		add_dnodeint_end(doubly, n);
+		add_dnodeint_end(head, n);
 }
 
 /**
- * pall - printsa all values on the stack
+ * pall - prints all values on the stack
  *
  * @head: head of the linked list
  * @nline: line numbers
@@ -50,7 +50,7 @@ void pall(stack_t **head, unsigned int nline)
 	stack_t *aux;
 	(void)nline;
 
-	aux = *doubly;
+	aux = *head;
 
 	while (aux)
 	{
