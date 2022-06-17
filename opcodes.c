@@ -12,6 +12,9 @@ void (*opcodes_get(char *opcode))(stack_t **stack, unsigned int line_number)
 	instruction_t command[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 	int i;

@@ -1,6 +1,82 @@
 #include "monty.h"
 
 /**
+ * pint - rpints the value at the top of the stack.
+ *
+ * @head: head of the linked list.
+ * @nline: line number
+ * Return: nothing
+ */
+void pint(stack_t **head, unsigned int nline)
+{
+	(void)nline;
+
+	if (*head == NULL)
+	{
+		dprintf(2, "L%u: ", nline);
+		dprintf(2, "can't pint, stack empty\n");
+		free_glob_v();
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", (*head)->n);
+}
+
+/**
+ * pop - removes the top element of the stack.
+ *
+ * @head: head of the linked list.
+ * @nline: line number
+ * Return: nothing.
+ */
+void pop(stack_t **head, unsigned int nline)
+{
+	stack_t *ptr;
+
+	if (head == NULL || *head == NULL)
+	{
+		dprintf(2, "L%u: can't pop an empty stack\n", nline);
+		free_glob_v();
+		exit(EXIT_FAILURE);
+	}
+	ptr = *head;
+	*head = (*head)->next;
+	free(ptr);
+}
+
+/**
+ * swap - swaps the top two elements of the stack.
+ *
+ * @head: head of the linked list.
+ * @nline: line number.
+ * Return: nothing
+ */
+void swap(stack_t **head, unsigned int nline)
+{
+	int i = 0;
+	stack_t *ptr = NULL;
+
+	ptr = *head;
+
+	for (; ptr != NULL; ptr = ptr->next, i++)
+		;
+
+	if (i < 2)
+	{
+		dprintf(2, "L%u: can't swap, stack too short\n", nline);
+		free_glob_v();
+		exit(EXIT_FAILURE);
+	}
+
+	ptr = *head;
+	*head = (*head)->next;
+	ptr->next = (*head)->next;
+	ptr->prev = *head;
+	(*head)->next = ptr;
+	(*head)->prev = NULL;
+}
+
+/**
  * push - pushes an element to the stack
  *
  * @head: head of the linked list
