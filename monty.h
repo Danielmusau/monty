@@ -70,6 +70,8 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **head, unsigned int nline);
 void pop(stack_t **head, unsigned int nline);
 void swap(stack_t **head, unsigned int nline);
+void nop(stack_t **head, unsigned int nline);
+void add(stack_t **head, unsigned int nline);
 
 
 /**get function*/

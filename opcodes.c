@@ -3,7 +3,7 @@
 /**
  * opcodes_get - Selects the correct opcode to perform
  *
- * @opc: opcode passed
+ * @opcode: opcode passed
  *
  * Return: pointer to the function that executes the opcode.
  */
@@ -15,6 +15,8 @@ void (*opcodes_get(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	int i;
