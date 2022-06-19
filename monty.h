@@ -72,6 +72,16 @@ void pop(stack_t **head, unsigned int nline);
 void swap(stack_t **head, unsigned int nline);
 void nop(stack_t **head, unsigned int nline);
 void add(stack_t **head, unsigned int nline);
+void sub(stack_t **head, unsigned int nline);
+void queue(stack_t **head, unsigned int nline);
+void stack(stack_t **head, unsigned int nline);
+void _div(stack_t **head, unsigned int nline);
+void mul(stack_t **head, unsigned int nline);
+void mod(stack_t **head, unsigned int nline);
+void pstr(stack_t **head, unsigned int nline);
+void pchar(stack_t **head, unsigned int nline);
+void rotr(stack_t **head, unsigned int nline);
+void rotl(stack_t **head, unsigned int nline);
 
 
 /**get function*/
