@@ -111,7 +111,7 @@ void mul(stack_t **head, unsigned int nline)
 
 }
 /**
- * div - divides the second element by the top element of the stack
+ * _div - divides the second element by the top element of the stack
  *
  * @head: head of the linked list
  * @nline: line number.
